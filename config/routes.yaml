@@ -4,3 +4,4 @@
 select:
     path: /
     controller: App\Controller\Sql::select
+
