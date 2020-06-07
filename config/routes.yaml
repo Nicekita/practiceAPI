@@ -4,4 +4,7 @@
 select:
     path: /
     controller: App\Controller\Sql::select
+div:
+    path: /div
+    controller: App\Controller\DivList::select
 
