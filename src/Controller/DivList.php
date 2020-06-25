@@ -8,11 +8,11 @@ use Symfony\Component\HttpFoundation\Response;
 
 class DivList
 {
-function select()
+function select($header,$connectionstring)
 {
     if (isset($_POST['table'])) {
-        header('Access-Control-Allow-Origin: *');
-        $dbconn = pg_connect("host=localhost port=5432 dbname=AMWbase user=postgres password=135713")
+        header($header);
+        $dbconn = pg_connect($connectionstring)
         or die('Не удалось соединиться: ' . pg_last_error());;
 // Выполнение SQL-запроса
         $query = 'SELECT * FROM '.$_POST['table'];

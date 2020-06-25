@@ -6,12 +6,12 @@ use Symfony\Component\HttpFoundation\Response;
 
 class Save
 {
-    function sql() {
+    function sql($year,$semestr,$header,$connectionstring) {
         $answer['error']=false;
-        header('Access-Control-Allow-Origin: http://frontend');
+        header($header);
         if (isset($_POST['eventtypename'])&&isset($_POST['divisionname'])&&isset($_POST['eventid'])&&isset($_POST['eventname'])&&isset($_POST['eventplace'])&&isset($_POST['eventdate'])&&isset($_POST['teacher'])&&isset($_POST['usermax'])&&isset($_POST['addinfo'])) {
 
-            $dbconn = pg_connect("host=localhost port=5432 dbname=AMWbase user=postgres password=135713");
+            $dbconn = pg_connect($connectionstring);
             $query = "select * from eventtype";
 
             $result = @pg_query($query) or $answer['error'] = true;
@@ -27,7 +27,7 @@ class Save
                     $divisionid = $stroka['divisionid'];
                 }
             }
-            $query = "insert into events values('" . $_POST["eventid"] . "','" . $_POST["eventname"] . "','" . $_POST["eventplace"] . "','" . $_POST["eventdate"] . "','" . $_POST["teacher"] . "'," . $_POST["usermax"] . ",'" . $eventtypeid . "','" . $_POST["addinfo"] . "','" . $divisionid . "',2020,2)";
+            $query = "insert into events values('" . $_POST["eventid"] . "','" . $_POST["eventname"] . "','" . $_POST["eventplace"] . "','" . $_POST["eventdate"] . "','" . $_POST["teacher"] . "'," . $_POST["usermax"] . ",'" . $eventtypeid . "','" . $_POST["addinfo"] . "','" . $divisionid . "',".$year.",".$semestr.")";
             if (@pg_query($query)==false){$answer['error'] = true;  return new Response(json_encode($answer)); }
             else {
                 $result = @pg_query($dbconn, $query) or $answer['error'] = true;

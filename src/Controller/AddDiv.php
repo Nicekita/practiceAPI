@@ -6,11 +6,11 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AddDiv
 {
-    function sql() {
-        header('Access-Control-Allow-Origin: http://frontend');
+    function sql($header,$connectionstring) {
+        header($header);
         $answer['error']=false;
 
-        $dbconn = pg_connect("host=localhost port=5432 dbname=AMWbase user=postgres password=135713");
+        $dbconn = pg_connect($connectionstring);
         $query = "select * from division";
         $result = pg_query($query) or $answer['error']=true;
         while ($stroka = pg_fetch_array($result, null, PGSQL_ASSOC)) {

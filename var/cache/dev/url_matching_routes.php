@@ -8,12 +8,12 @@
 return [
     false, // $matchHost
     [ // $staticRoutes
-        '/' => [[['_route' => 'select', '_controller' => 'App\\Controller\\Sql::select'], null, null, null, false, false, null]],
-        '/div' => [[['_route' => 'div', '_controller' => 'App\\Controller\\DivList::select'], null, null, null, false, false, null]],
-        '/save' => [[['_route' => 'save', '_controller' => 'App\\Controller\\Save::sql'], null, null, null, false, false, null]],
-        '/edit' => [[['_route' => 'edit', '_controller' => 'App\\Controller\\Edit::sql'], null, null, null, false, false, null]],
-        '/delete' => [[['_route' => 'delete', '_controller' => 'App\\Controller\\Delete::sql'], null, null, null, false, false, null]],
-        '/adddiv' => [[['_route' => 'adddiv', '_controller' => 'App\\Controller\\AddDiv::sql'], null, null, null, false, false, null]],
+        '/' => [[['_route' => 'select', 'header' => 'Access-Control-Allow-Origin: http://frontend', 'connectionstring' => 'host=localhost port=5432 dbname=AMWbase user=postgres password=135713', '_controller' => 'App\\Controller\\Sql::select'], null, null, null, false, false, null]],
+        '/div' => [[['_route' => 'div', 'header' => 'Access-Control-Allow-Origin: http://frontend', 'connectionstring' => 'host=localhost port=5432 dbname=AMWbase user=postgres password=135713', '_controller' => 'App\\Controller\\DivList::select'], null, null, null, false, false, null]],
+        '/save' => [[['_route' => 'save', 'year' => '2020', 'semestr' => '2', 'header' => 'Access-Control-Allow-Origin: http://frontend', 'connectionstring' => 'host=localhost port=5432 dbname=AMWbase user=postgres password=135713', '_controller' => 'App\\Controller\\Save::sql'], null, null, null, false, false, null]],
+        '/edit' => [[['_route' => 'edit', 'year' => '2020', 'semestr' => '2', 'header' => 'Access-Control-Allow-Origin: http://frontend', 'connectionstring' => 'host=localhost port=5432 dbname=AMWbase user=postgres password=135713', '_controller' => 'App\\Controller\\Edit::sql'], null, null, null, false, false, null]],
+        '/delete' => [[['_route' => 'delete', 'header' => 'Access-Control-Allow-Origin: http://frontend', 'connectionstring' => 'host=localhost port=5432 dbname=AMWbase user=postgres password=135713', '_controller' => 'App\\Controller\\Delete::sql'], null, null, null, false, false, null]],
+        '/adddiv' => [[['_route' => 'adddiv', 'header' => 'Access-Control-Allow-Origin: http://frontend', 'connectionstring' => 'host=localhost port=5432 dbname=AMWbase user=postgres password=135713', '_controller' => 'App\\Controller\\AddDiv::sql'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

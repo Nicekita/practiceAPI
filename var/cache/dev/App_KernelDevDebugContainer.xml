@@ -34,6 +34,10 @@
     <parameter key="kernel.container_class">App_KernelDevDebugContainer</parameter>
     <parameter key="container.dumper.inline_class_loader">true</parameter>
     <parameter key="container.dumper.inline_factories">true</parameter>
+    <parameter key="year" type="string">2020</parameter>
+    <parameter key="semestr" type="string">2</parameter>
+    <parameter key="headerACAO">Access-Control-Allow-Origin: http://frontend</parameter>
+    <parameter key="connectionstring">host=localhost port=5432 dbname=AMWbase user=postgres password=135713</parameter>
     <parameter key="fragment.renderer.hinclude.global_template"></parameter>
     <parameter key="fragment.path">/_fragment</parameter>
     <parameter key="kernel.secret">%env(APP_SECRET)%</parameter>

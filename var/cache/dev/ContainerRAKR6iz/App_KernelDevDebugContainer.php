@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerHOVgaJr;
+namespace ContainerRAKR6iz;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -38,6 +38,7 @@ class App_KernelDevDebugContainer extends Container
             'kernel' => true,
         ];
         $this->methodMap = [
+            'App\\Controller\\AddDiv' => 'getAddDivService',
             'App\\Controller\\Delete' => 'getDeleteService',
             'App\\Controller\\DivList' => 'getDivListService',
             'App\\Controller\\Edit' => 'getEditService',
@@ -137,6 +138,18 @@ class App_KernelDevDebugContainer extends Container
     public function getRemovedIds(): array
     {
         return require $this->containerDir.\DIRECTORY_SEPARATOR.'removed-ids.php';
+    }
+
+    /**
+     * Gets the public 'App\Controller\AddDiv' shared autowired service.
+     *
+     * @return \App\Controller\AddDiv
+     */
+    protected function getAddDivService()
+    {
+        include_once \dirname(__DIR__, 4).'\\src\\Controller\\AddDiv.php';
+
+        return $this->services['App\\Controller\\AddDiv'] = new \App\Controller\AddDiv();
     }
 
     /**
@@ -1659,6 +1672,9 @@ class App_KernelDevDebugContainer extends Container
             'kernel.container_class' => 'App_KernelDevDebugContainer',
             'container.dumper.inline_class_loader' => true,
             'container.dumper.inline_factories' => true,
+            'year' => '2020',
+            'semestr' => '2',
+            'headerACAO' => 'Access-Control-Allow-Origin: http://frontend',
             'fragment.renderer.hinclude.global_template' => '',
             'fragment.path' => '/_fragment',
             'kernel.http_method_override' => true,

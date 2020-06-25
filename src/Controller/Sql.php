@@ -8,12 +8,12 @@ use Symfony\Component\HttpFoundation\Response;
 
 class Sql
 {
-    function select()
+    function select($header,$connectionstring)
 {
-    header('Access-Control-Allow-Origin: http://frontend');
+    header($header);
     if (isset($_POST['login'])) {
 
-        $dbconn = pg_connect("host=localhost port=5432 dbname=AMWbase user=postgres password=135713")
+        $dbconn = pg_connect($connectionstring)
         or die('Не удалось соединиться: ' . pg_last_error());;
 // Выполнение SQL-запроса
         $login['auth'] = 0;

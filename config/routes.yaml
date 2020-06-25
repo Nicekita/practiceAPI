@@ -4,19 +4,41 @@
 select:
     path: /
     controller: App\Controller\Sql::select
+    defaults:
+        header: '%headerACAO%'
+        connectionstring: '%connectionstring%'
 div:
     path: /div
     controller: App\Controller\DivList::select
+    defaults:
+        header: '%headerACAO%'
+        connectionstring: '%connectionstring%'
 save:
     path: /save
     controller: App\Controller\Save::sql
+    defaults:
+        year: '%year%'
+        semestr: '%semestr%'
+        header: '%headerACAO%'
+        connectionstring: '%connectionstring%'
 edit:
     path: /edit
     controller: App\Controller\Edit::sql
+    defaults:
+        year: '%year%'
+        semestr: '%semestr%'
+        header: '%headerACAO%'
+        connectionstring: '%connectionstring%'
 delete:
     path: /delete
     controller: App\Controller\Delete::sql
+    defaults:
+        header: '%headerACAO%'
+        connectionstring: '%connectionstring%'
 adddiv:
     path: /adddiv
     controller: App\Controller\AddDiv::sql
+    defaults:
+        header: '%headerACAO%'
+        connectionstring: '%connectionstring%'
 

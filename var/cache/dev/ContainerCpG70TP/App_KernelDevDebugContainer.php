@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerYcjrwml;
+namespace ContainerCpG70TP;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -1672,6 +1672,10 @@ class App_KernelDevDebugContainer extends Container
             'kernel.container_class' => 'App_KernelDevDebugContainer',
             'container.dumper.inline_class_loader' => true,
             'container.dumper.inline_factories' => true,
+            'year' => '2020',
+            'semestr' => '2',
+            'headerACAO' => 'Access-Control-Allow-Origin: http://frontend',
+            'connectionstring' => 'host=localhost port=5432 dbname=AMWbase user=postgres password=135713',
             'fragment.renderer.hinclude.global_template' => '',
             'fragment.path' => '/_fragment',
             'kernel.http_method_override' => true,
